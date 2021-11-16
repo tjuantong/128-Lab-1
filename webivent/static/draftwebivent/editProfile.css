@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    font-size: 60px; 
+    font-weight: 900; 
+    margin-bottom: 5px;
+}
+
+/*to center the container*/
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+/*for the profile container*/
+.box {
+    background-color: #ffffff;
+    width: 1300px;
+    height: 650px;
+}
+
+/*for button below the columns*/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*align buttons*/
+.row.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.col {
+    float: left;
+    width: 50%;
+}
+
+/*for checkbox alignment*/
+.col3{
+    width: 50%;
+    float: left;
+    margin-top: -25px;
+}
+  
+  /*put margin between checkbox and input*/
+.col3 .col input {
+    margin-right: 5px;
+}
+
+/*format for each field*/
+form .field{
+    height: 45px;
+    margin: 45px 0;
+    margin-bottom: 40px;
+    display: flex;
+    position: relative;    
+}
+
+/*for interests caption*/
+form .field.h {
+    height: 0px;
+}
+
+/*label for fields*/
+form .field .label{
+    position: absolute;
+    top: -20px;
+    font-weight: 500;
+    color: blueviolet;
+}
+
+
+/*input for field*/
+form .field input{
+    height: 100%;   
+    width: 250px;
+    padding-right: 15px;
+    font-size: 18px;
+}
+
+/*for column 2 input width line*/
+form .field input.field2{  
+    width: 500px;
+}
+
+/*to hide field border and show only the bottom*/
+form .field .form-control, form .field .form-control:focus{
+    border-color:transparent;
+    border-bottom-color: #bebcc1;
+    box-shadow:none;
+    outline-width: 0;
+
+}
+
+/*to make the underline of the anchor tag disappear in between the button*/
+a {
+    text-decoration: none;
+}
+
+button {
+    width: 30%;
+    padding: 0px 80px 0px 80px;
+    margin: 10px;
+    height: 50px;
+    border: none;
+    border-color: #5302d6;
+    border-style: solid;;
+    color: white;
+    background: #5302d6;
+    border-width: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+/*change color for back button*/
+button.back {
+    color: #5302d6;
+    background: white; 
+}
+
+/*hover effect for button*/
+button:hover{
+    box-shadow: 0px 0px 15px 5px #c395ff;
+}

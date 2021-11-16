@@ -1,0 +1,176 @@
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/*for larger checkbox*/
+.larger {
+  transform: scale(1.5);
+}
+
+/*image position*/
+img {
+  z-index: -1;  /*stack order for the image*/
+  transform: translate(270px, 270px);
+}
+
+/*Welcome back style*/
+.header > h1 {
+  margin: auto auto auto 10px;
+  color: #5302d6;
+  font-size: 120px;
+  font-weight: 800;
+  position: absolute;
+  width: 627px;
+  height: 150px;
+  left: 100px;
+  top: 220px;
+  line-height: 146px;
+}
+
+/*Login*/
+.header > h2 {
+    position:absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    left: 830px;
+    top: 80px;
+    color: #5302d6;
+  }
+
+/*descriptions*/
+.header > h4 {
+  font-weight:300;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  top: 216px;
+  left: 830px;
+  color: rgba(0,0,0);
+}
+
+/*log in prompt*/
+.r{
+  left: 830px;
+  top: 301px;
+  position: absolute; 
+  width: max-content;
+}
+
+/*centers the register here prompt*/
+.pr{    
+  text-align: center; 
+  margin-left: 90px;    
+  width:max-content;
+  left: 360px;
+  top: 1200px;    
+}
+
+/*login form*/
+.form {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  left: 830px;
+  top: 268px;
+  position: absolute;
+}
+
+/* OR divider*/
+.form p {
+  text-align: center;
+  color:#888;
+}
+
+/*Register anchor tag part*/
+.form p a {
+  position: static;
+  color: #000;
+  font-size: 16px;
+  left: 830px;
+}
+
+/*for field input style)*/
+.form-field {
+  height: 50px;
+  padding: 0 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  outline: 0;
+  margin-top: 20px;
+  width: 500px;
+  left: 830px;
+  top: 301px;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*border color for foem input*/
+.form-field:focus {
+  border-color: #5302d6;
+}
+
+/*login button*/
+.form button {
+  padding: 20px 0px;
+  border: 0;
+  background: #5302d6; 
+  border-radius: 3px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+/*set hover color shadow*/
+.form button:hover {
+  box-shadow: 0px 0px 15px 5px #c395ff;
+}
+
+/*Alert box for login*/
+.form .alert2 {
+  border-radius: 4px;
+  outline: 0;
+  padding-left: 20px;
+  text-align: left;
+  margin-top: 20px;
+  width: 500px;
+  left: 830px;
+  top: 301px;
+  background-color: #ffcb3d;
+  color: rgb(51, 51, 51);
+}
+
+/*Alert box text style*/
+.form .alert2 h4 {
+  padding: 0px, 20px;
+  text-align: left;
+}
+
+/*for checkbox label*/
+.checkBox {
+  padding-top: 10px;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/*pw eye icon*/
+form i {
+  margin-left: -46px;
+  font-size: 25px;
+  color: #5d5d5d;
+}

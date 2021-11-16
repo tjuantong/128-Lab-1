@@ -1,0 +1,58 @@
+/*for navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 70px;
+    width: 100%;
+    background-color: #5302d6;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+    float: left;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/*Anchor tags in navbar*/
+li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 35px 15px 35px;
+}
+
+/*hover for anchor tags in navbar*/
+li a:hover {
+    color: #f3e13c;
+    transition: 0.3s ease-in;
+}
+    
+/*to make the about and features page on the right side of navbar*/
+.rightnav{
+    float: right;  
+    margin-right: 100px;
+}
+    
+/*change font size of About and Features label in navbar*/
+.font {
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+/*logout icon*/
+img.c {
+    width: 30px;
+    height: 30px;
+    border-radius: 0px;
+    transform: translateX(10px);   
+    margin-top: 20px;
+}
+
+/*padding for logout*/
+li a.logout {
+    padding: 12px 15px 15px 5px;
+}

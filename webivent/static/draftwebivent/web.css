@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/*header for current form*/
+h1{
+    margin-top:20px;
+    margin-bottom: 20px;
+    color: #5302d6;
+    font-size: 60px; 
+    font-weight: 900; 
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 40px;
+    background: #dbbfff;
+    border-radius: 8px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #5302d6;
+}
+
+form h2 {
+    font-weight: 800;
+    font-size: 40px;
+    color:#5302d6;
+}
+
+.field{
+    width: 580px;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    font-size: 20px;
+    /*display: flex;
+    position: relative;*/
+}
+
+.field input {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 10px;
+}
+.field input:focus{
+    outline: none;
+    border-color: #5302d6;
+    box-shadow:0 0 10px #5302d6;
+  }
+
+label {
+    font-weight: 600;
+    font-size: 20px;
+    color: #5302d6;
+}
+
+/*for small label below input*/
+.small{
+     
+    font-weight: 300; 
+    font-size: 15px;
+    margin-top: -10px;
+    color: white;
+}
+
+.checkbox {
+    font-weight: 400; 
+    font-size: 20px;
+    color: white;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-color: #5302d6;
+    border-style: solid;
+    color: white;
+    background-color: #5302d6;
+    border-width: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    margin-top: 20px;
+}
+
+button:hover{
+    box-shadow: 0px 0px 15px 5px #5302d6;
+}
+
+/*Alert boc for error message*/
+form .alert2 {
+    border-radius: 4px;
+    outline: 0;
+    padding: 5px;
+    text-align: left;
+    margin-top: 10px;
+    background-color: #ff8989;
+    color: rgb(255, 255, 255);
+  }
+  
+  /*Alert box text style*/
+form .alert2 h3 {
+    padding: 0px, 20px;
+    text-align: center;
+}
+
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/*pw eye icon*/
+form i {
+  margin-left: -46px;
+  font-size: 25px;
+  color: #5d5d5d;
+}

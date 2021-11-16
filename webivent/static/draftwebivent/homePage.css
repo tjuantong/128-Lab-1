@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+/*style for text*/
+h1 {
+  margin: 0px;
+  font-weight: 1000;
+  font-size: 100px;
+}
+
+/*header text position*/
+.header {
+  position: absolute;
+  top: 42%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(195,186,239,255);
+}
+
+/*bg image*/
+.image{
+  max-width: 55%; 
+  float: right; 
+  margin-top: 10px;
+  z-index: -1;
+}
+
+
+/*to make the underline of the anchor tag disappear in between the button*/
+a {
+  text-decoration: none;
+}
+
+/*alignment in buttons*/
+.container {
+  text-align: center;
+}
+
+/*button position*/
+.col {
+  left:27%;
+  top:68%;
+  position: absolute;    
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*styles for button*/
+button {
+  left: 50%;
+  border: white;
+  border-width: 3px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 20px 60px 20px;
+  width: 300px;
+  margin: 100px 20px 20px 20px;
+  color:#5302d6;
+
+}
+
+/*Register now button change color*/
+.button1 {
+  background-color:#5302d6;
+  color: white;    
+}
+
+/*button color when hovered*/
+button:hover, .button1:hover{
+  background-color: black;
+  color: white;
+  transition: 0.5s ease;
+}

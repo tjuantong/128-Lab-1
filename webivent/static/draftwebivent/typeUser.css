@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 50px; 
+    font-weight: 800;
+    color:#5302d6;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*centering the buttons*/
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    max-width: 100%;
+}
+
+/*to lessen gap of buttons between each other*/
+.right {
+    margin-left: 250px;
+}
+
+.left {
+    margin-right: 250px;
+}
+
+/*general button style for webseeker and organizer*/
+button {
+    left: 50%;
+    border-style: solid;
+    border-width: 8px;
+    border-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    padding-top: 78%;
+    border-radius: 50px;
+    display: inline-block;
+    width: 400px;
+    height: 470px;
+    margin: 100px 50px 20px 50px;
+    color:#A770EF;
+    transition-duration: 0.3s;
+    box-shadow: 0px 0px 15px 5px rgb(224, 224, 224);
+}
+
+/*for button name color*/
+.button1 {
+    color:#5302d6;
+}
+
+/*hover state of button*/
+.button1:hover{
+    background-color: #5302d6;
+    color:white;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #5302d6;  
+    box-shadow: 0px 0px 15px 5px rgba(112, 0, 240, 0.445);
+}
+    
+/*picture for webseeker*/
+.ws{
+    background-image: url(man-searching-web-for-information-vector.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;  
+}
+
+/*picture for organizer*/
+.og{
+    background-image: url(organizer2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+
+/*for the buttons to be side by side*/
+.column {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+/*for caption of webseeker*/
+.column .web{
+    margin-left: 250px; 
+    margin-top: 100px;
+}
+
+/*for caption of organizer*/
+.column .org{
+    margin-right: 250px; 
+    margin-top: 100px;
+}

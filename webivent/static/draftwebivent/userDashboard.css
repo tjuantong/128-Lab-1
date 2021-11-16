@@ -1,0 +1,289 @@
+body {
+    margin: 0px;
+    margin-bottom: 20px;
+    background: rgb(195,186,239,255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*contain webinar cards horizontally*/
+.card-row{
+    display: flex;
+    margin-left: 40px;
+}
+
+/*webinar card size*/
+.card-container {
+	background-color: #ffffff;
+	border-radius: 15px;
+	
+	color: #000000;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/*hover on card*/
+.card-container:hover {
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+    transform: translateY(-15px);
+    transition: 0.2s ease;
+}
+
+/*star icon*/
+.favicon {
+    height: 40px;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDc3Ljg5OSA0NzcuODk5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuODk5IDQ3Ny44OTk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNDY5LjExLDE3MC4xMjJjLTUuNDYyLTYuMTMtMTIuOTI2LTEwLjExNy0yMS4wNTgtMTEuMjQ5di0wLjAxN2wtMTI3LjAxLTE3LjU0NUwyNzAuNzgxLDIxLjIxMw0KCQkJYy03LjMzOS0xNy41NzktMjcuNTM5LTI1Ljg4LTQ1LjExNy0xOC41NDFjLTguMzgsMy40OTktMTUuMDQzLDEwLjE2MS0xOC41NDEsMTguNTQxbC01MC4yNjEsMTIwLjA5OGwtMTI3LjAxLDE3LjU0NQ0KCQkJYy0xOC45MjMsMi42MzQtMzIuMTI4LDIwLjExMS0yOS40OTQsMzkuMDM0YzEuMTMyLDguMTMyLDUuMTE5LDE1LjU5NiwxMS4yNDksMjEuMDU4bDk1LjY5Myw4NS4zMzNMODcuNjM4LDQzOC4xODUNCgkJCWMtMi4xMywxMy41OTcsNC4xMTUsMjcuMTQ0LDE1LjgzOCwzNC4zNTVjMTEuNTU4LDcuMzkxLDI2LjQyNSw3LjExNSwzNy43LTAuN2w5Ny43NzUtNjYuNDkybDk3Ljc3NSw2Ni41Ng0KCQkJYzE1Ljc3NywxMC43MDgsMzcuMjQ4LDYuNTk5LDQ3Ljk1Ny05LjE3OGM0Ljg2Ni03LjE3LDYuODU5LTE1LjkwNyw1LjU4Mi0yNC40NzdsLTE5LjY2MS0xMzMuOTU2bDk1LjY5My04NS4zMzMNCgkJCUM0ODAuNTYxLDIwNi4yNTQsNDgxLjgyMSwxODQuMzg2LDQ2OS4xMSwxNzAuMTIyeiBNMzQxLjAxLDI4NS4wMTJjLTQuMjgxLDMuODI1LTYuMzUyLDkuNTQ1LTUuNTEzLDE1LjIyNGwyMC40OCwxNDMuMzYNCgkJCWwtMTA3LjM4My03My4wMTFjLTUuNzg5LTMuOTM0LTEzLjM5NC0zLjkzNC0xOS4xODMsMGwtMTA4LjAxNSw3Mi41NjdsMjEuMDA5LTE0Mi45ODRjMC44MTYtNS42NTYtMS4yNTQtMTEuMzQ1LTUuNTEzLTE1LjE1NQ0KCQkJbC0xMDIuNC05Mi4yOTdsMTM2LjY3LTE4Ljg1OWM1Ljk4NC0wLjgyNSwxMS4wODUtNC43NTIsMTMuNDE0LTEwLjMyNWw1NC41NzktMTI5LjM5OWMwLjA2MiwwLjA3NiwwLjEwOCwwLjE2MywwLjEzNywwLjI1Ng0KCQkJbDU0LjAxNiwxMjkuMDc1YzIuMzI5LDUuNTczLDcuNDMxLDkuNSwxMy40MTQsMTAuMzI1bDEzNi44NDEsMTkuNjk1TDM0MS4wMSwyODUuMDEyeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K);
+    background-repeat: no-repeat;
+    margin: 4px 0px 0px 0px;
+}
+
+/*style for registrants icon*/
+img.icon {
+    border-radius: none;
+    height: 40px;
+    width: 40px;
+    padding-bottom: 5px;
+}
+
+/*registrants icon*/
+.people {
+    height: 10px;
+    background-image: url('people.jpg');
+}
+
+/*Sections*/
+h1.title {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    font-size: 55px;
+    font-weight: 800;
+    color: #5302d6; 
+    width: 550px;
+}
+
+/*Webinar title*/
+h2 {
+    margin:0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 25px;
+}
+
+/*organization name*/
+h3 {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*for registrant number*/
+h3.registrants {
+    margin-left: 36px;
+    margin-top: -39px;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+/*Event Date*/
+h4 {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*button for favorites*/
+button.fav {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: white;
+}
+
+button.fav:hover {
+    border-color:  #ffee00;
+    transition: 0.2s ease;
+}
+
+/*for webinar picture in card*/
+img {
+    width: 350px;
+    height: 235px;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    
+}
+
+/*for a new row after column*/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*columns*/
+.col {
+    float: left;
+    width: 75%;
+}
+
+.col1{
+    float: right;
+    width: 25%;
+}
+
+/*tags for the webinars*/
+.tags {
+	text-align: left;
+	padding: 10px 5px 5px 5px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.tags ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 5px;
+    background-color: white;
+    height: 40px;
+}
+
+.tags ul li {
+	border-color: rgb(212, 212, 212);
+    border: 2px solid rgb(212, 212, 212);
+    background-color: rgb(212, 212, 212);
+    color:#000000;
+	border-radius: 50px;
+	display: inline-block;
+	font-size: 12px;
+    font-weight: 400;
+	margin: 0 7px 7px 0;
+	padding: 3px 5px 3px 5px;
+}
+
+/*HORIZONTAL SCROLLING*/
+
+div.scrollHorizontal {
+    overflow: auto;
+    margin-inline-end: 10px;
+    padding-bottom: 24px;
+    padding-top: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(195,186,239,255); 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(195,186,239,255); 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(225, 215, 255); 
+}
+
+/*SEARCH BAR STYLES*/
+
+/* contain the search bar and filter button*/
+.box{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*search bar input*/
+input {
+    height: 50px;
+    width: 30%;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+/*search button*/
+button.search {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    color: white;
+}
+
+/*filter button*/
+button.search.filter {
+    width: 70px;
+}
+
+/*search icon*/
+.searchicon {
+    background-image: url(search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 48%;
+}
+
+/*filter icon*/
+.filtericon {
+    background-image: url(filtericon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 48%;
+}
+
+/*for the filter button to be inlie with search bar*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/*dropdown content of filter button*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    overflow: auto;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+/*text of dropdown filter*/
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 7px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/*hover for filter choices*/
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+/*shows the dropdown of filter button*/
+.show {
+    display: block;
+}

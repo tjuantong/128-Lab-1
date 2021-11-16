@@ -1,0 +1,56 @@
+
+/*General animation*/
+.animation {
+  animation-name: move;
+  transition: ease-in;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+
+/*Animation for log in*/
+.loginAnimation {
+  transition: none;
+  animation-duration: 1s;
+}
+
+.a0{
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+}
+
+.a1{
+  animation-delay: 0.3s;
+}
+
+.a2{
+  animation-delay: 0.6s;
+}
+
+.a3 {
+  animation-delay: 0.5s;
+}
+
+
+.a4 {
+  animation-delay: 1.0s;
+}
+
+
+.a5 {
+  animation-delay: 1.3s;
+}
+
+/*animation for fade in effect*/
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
