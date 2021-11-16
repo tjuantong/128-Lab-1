@@ -1,7 +1,7 @@
 # 128-Lab-1
 Repository for CMSC 128 Lab 1 on frontend and backend coding of website
 
-##Requirements for the lab activity
+## Requirements for the lab activity
 1. Login Page
     - should have username and password field
     - should have log in button
