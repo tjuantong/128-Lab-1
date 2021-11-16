@@ -1,0 +1,155 @@
+{% load static %}
+{% load class %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webseeker Sign Up Form</title>
+        <link rel="stylesheet" href="{% static 'draftwebivent/web.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    </head>
+
+
+    <body>
+        
+        <h1>Registration Page</h1>
+
+        {% block body %}
+
+        <form method="post" action="">
+
+            {% csrf_token %}
+            
+            {% if form.errors %}    <!--only show error block if username and pw is invalid-->    
+            <div class="alert2">
+                <h3>ERROR!</h3>
+                
+            {% for field, errors in form.errors.items %}
+                <!--Field = username, password1, and password2 -->
+                
+                {% for error in errors%}
+                    <li>{{error}}</li>  <!--only print help text-->
+                {% endfor %}
+            {% endfor %}
+            </div>
+            {% endif %}
+
+            <h2>Account</h2>
+
+            <div class="field">
+                <label for="username">Username</label>
+                {{form.username|addcss:" field "}}
+            </div>
+
+            <div class="field">
+                <label for="password1">Password</label>
+                {{form.password1|addcss:" field "}}
+                <i class="bi bi-eye-slash" id="togglePW1"></i>
+            </div>
+            <div class="field">
+                <label for="password2">Confirm Password</label>
+                {{form.password2|addcss:" field "}}
+                <i class="bi bi-eye-slash" id="togglePW2"></i>
+                <div class="small">Password must contain at least 8 characters, at least 1 capital letter, 1 number, and 1 symbol.</div>
+                
+            </div>
+
+
+            <h2>Personal Information</h2>
+
+            <div class="field">
+                <label for="first_name">First Name</label>
+                {{form.first_name|addcss:" field "}}
+            </div>
+            <div class="field">
+                <label for="last_name">Last Name</label>
+                {{form.last_name|addcss:" field "}}
+            </div>
+            <div class="field">
+                <label for="age">Age</label>
+                {{profile_form.age|addcss:" field "}}
+            </div>
+            <div class="field">
+                <label for="occupation">Occupation</label>
+                {{profile_form.occupation|addcss:" field "}}
+            </div>
+            <div class="field">
+                <label for="city">City</label>
+                {{profile_form.city|addcss:" field "}}
+            </div>
+            <div class="field">
+                <label for="province">Province</label>
+                {{profile_form.province|addcss:" field "}}
+            </div>
+            <div class="field">
+                <label for="school">Country</label>
+                {{profile_form.country|addcss:" field "}}
+            </div>
+
+            <h2>Educational Background</h2>
+
+            
+            <div class="field">
+                <label for="school">School / University</label>
+                {{profile_form.school|addcss:" field "}}
+                <div class="small">(Please do not abbreviate the name of your school/university)</div>
+                
+            </div>
+            
+                
+            <div class="field">
+                <label for="course_yr_lvl">Course and Year Level</label>
+                {{profile_form.course_yr_lvl|addcss:" field "}}
+                <div class="small">(i.e. BS Computer Science 2)</div>
+                
+            </div>
+            
+        
+            <h2>Interests</h2>
+            <label>Please check the boxes you're interested in.</label>
+                
+            {% for i in profile_form.interest %}
+                <div class="checkbox">{{i}}</div>
+            {% endfor %}
+
+            <button type="submit" name="submit"> Submit </button>
+
+        </form>
+
+        {% endblock %}
+        
+    </body>
+
+    <script>
+        const togglePW1 = document.getElementById("togglePW1");
+        const togglePW2 = document.getElementById("togglePW2");
+        const password1 = document.getElementById("id_password1");  //change type of password
+        const password2 = document.getElementById("id_password2");
+        
+        togglePW1.addEventListener('click', function (e) {
+            // toggling the type attribute of the password to show the password or not
+            
+            if(password1.type === "password"){   // type = text --> shows the password
+                password1.type= "text";
+            }else{
+                password1.type = "password";     // type = password --> password is not visible
+            }
+            this.classList.toggle('bi-eye');    // toggle the eye / eye slash icon
+        });
+
+        togglePW2.addEventListener('click', function (e) {
+            // toggling the type attribute of the password to show the password or not
+            
+            if(password2.type === "password"){   // type = text --> shows the password
+                password2.type= "text";
+            }else{
+                password2.type = "password";     // type = password --> password is not visible
+            }
+            this.classList.toggle('bi-eye');    // toggle the eye / eye slash icon
+        });
+
+    </script>
+</html>
+
+
+

@@ -1,0 +1,48 @@
+<!--to load static files such as css and js files in the html-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'draftwebivent/homePage.css' %}">
+    <link rel="stylesheet" href="{% static 'draftwebivent/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+  </header>
+  
+  <body>
+    <!--navbar-->
+    <ul>
+      <li><a class="active" href="{% url 'home'%}">Webivent</a></li>
+      <div class="rightnav">
+          <li class="font"><a href="#">Features</a></li>
+          <li class="font"><a href="#">About</a></li>
+      </div>
+    </ul>
+    <!--end of navbar-->
+
+    <!--bg image on right side of webpage-->
+    <img class="image animation a3" src="{% static 'draftwebivent/webinar2.jpg' %}" alt="Webinar" >
+    
+    <!--text-->
+    <div class="header">
+      <h1 class="animation a3">Learn.</h1>
+      <h1 class="animation a4">Explore.</h1>
+      <h1 class="animation a5">Join.</h1>
+    </div>
+    <!--end of text-->
+
+    <!--Register and login buttons-->
+    <div class="col">
+      <a href="{% url 'typeUser' %}">
+        <button class="button1 container animation a5">Register now</button>
+      </a>
+      <a href="{% url 'loginPage' %}">
+        <button class="container animation a5">Log in</button>
+      </a>
+    </div>
+    <!--end of register and login buttons-->
+    
+  </body>
+
+</html>

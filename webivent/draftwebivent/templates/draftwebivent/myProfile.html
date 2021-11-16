@@ -1,0 +1,185 @@
+<!--to load static files such as css and js files in the html-->
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Profile</title>
+        <link rel="stylesheet" href="{% static 'draftwebivent/myProfile.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/navbar.css' %}">
+    </head>
+
+    <body>
+        <!--navbar-->
+        <ul>
+            <li><a class="active" href="{% url 'dashboard' %}">Webivent</a></li>
+            <li class="font"><a href="{% url 'myProfile' %}">My Profile</a></li>
+            <li class="font"><a href="#">Categories</a></li>
+            <div class="rightnav">
+                <img class="c" src="{% static 'draftwebivent/logoutwhite.svg' %}">
+                <li class="font"><a class="logout" href="{% url 'logout' %}">Log out</a></li>
+            </div>
+        </ul>
+        <!--end of navbar-->
+
+    {% block content %}  
+    
+    <!--to redirect to the login page after 5 mins of inactivity-->
+    {{ redirect_to_login_immediately }}
+    
+      <div class="row animation a0">
+    
+        <!--First Column containing buttons and profile pic-->
+        <div class="col">
+            
+            <!--Profile picture-->
+            <img class="pfp" src="{% static 'draftwebivent/pfp1.jpg' %}">
+
+            <!--container with all buttons-->
+            <div class="button-container">
+                <a href="{% url 'editProfile' %}">
+                    <button class="edit">
+                        <div class="text">Edit Profile</div>
+                    </button>
+                </a>
+                <br>
+                <button class="webinar">
+                    <div class="text">Registered Webinars</div>
+                </button>
+                <br>
+                <button class="fav">
+                    <div class="text">Favorites</div>
+                </button>
+                <br>
+                <button class="calendar">
+                    <div class="text">Calendar</div>
+                </button>
+            </div>
+        </div>
+
+        <!--Second Column containing the rest of profile-->
+        <div class="col1">
+    {% endblock content %}
+            <!--Column 1 (Profile name and activity 1)-->
+            <div class="center">
+                <h1>{{user.first_name}} {{user.last_name}}</h1>
+                <h2>{{user.username}}</h2>
+                &nbsp;
+                
+                <h1 class="header2">Activity</h1>
+                <div class="line"></div>
+                &nbsp;
+
+                <!--Activity blocks-->
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            <!--End of Column 1-->
+
+            <!--Column 2 (Calendar and Activity 2)-->
+            <div class="center">
+                
+                <!--First row will contain calendar-->
+                <div class="row">
+                    <h1 class="header2 calendar">Calendar</h1>
+                    <div class="line column2"></div>
+                    &nbsp;
+                    
+                    <!--Calendar-->
+                    <div class="calendar-box calcontent">
+  
+                        <div class="calheader">May 2021</div>
+                      
+                        <span>Su</span>
+                        <span>Mo</span>
+                        <span>Tu</span>
+                        <span>We</span>
+                        <span>Th</span>
+                        <span>Fr</span>
+                        <span>Sa</span>
+                        
+                        <!--Other dates to be blank from other months-->
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                        <span>18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+                        <span>22</span>
+                        <span>23</span>
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span>27</span>
+                        <span>28</span>
+                        <span>29</span>
+                        <span>30</span>
+                        <span class="circle">31</span>
+
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                        <span class="blank"></span>
+                    </div>
+                    <!--End of Calendar-->
+  
+                </div>
+                <!--End of first row in Column 2-->
+
+                <br>
+
+                <!--Second Row of Column 2 (Activity 2)-->
+                <div class="row">
+                    <h1 class="header2 calendar">Activity</h1>
+                    <div class="line column2"></div>
+                    &nbsp;
+
+                    <!--For horizontal scrolling effect-->
+                    <div class="scrollHorizontal card-row">
+                      <div class="block activity"></div>
+                      <div class="block activity"></div>
+                      <div class="block activity"></div>  
+                      <div class="block activity"></div>
+                      <div class="block activity"></div>
+                      <div class="block activity"></div>  
+                      <div class="block activity"></div>
+                    </div>
+                </div>
+                <!--End of Second Row of Column 2-->
+
+            </div>
+            <!--End of Column 2 (Calendar and Activity 2)-->
+        
+        </div>
+        <!--End of Second Column containing the rest of profile-->
+
+    </body>
+
+</html>

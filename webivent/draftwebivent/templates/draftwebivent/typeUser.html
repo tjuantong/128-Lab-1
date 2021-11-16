@@ -1,0 +1,57 @@
+<!--to load static files such as css and js files in the html-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Type of User Page</title>
+        <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/typeUser.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/navbar.css' %}">
+    </head>
+
+    <body>
+
+        <!--Navbar-->
+        <ul>
+            <li><a class="active" href="{% url 'home' %}">Webivent</a></li>
+            <div class="rightnav">
+                <li class="font"><a href="#">Features</a></li>
+                <li class="font"><a href="#">About</a></li>
+            </div>
+        </ul>
+        <!--End of navbar-->
+
+        <div style="text-align: center;">
+            <h1 class="animation a0"> Which type of user are you?</h1>
+        </div>
+        
+        <!--Button for webseeker-->
+        <div class="column animation a0">
+            <div class="center right">
+                <a href="{% url 'web' %}">
+                    <button class="ws button1">Webseeker</button>
+                </a>
+            </div>
+            <div class="web">
+                I want to find webinars.
+            </div>
+        </div>
+        <!--End of button for webseeker-->
+
+        <!--Button for organizer-->
+        <div class="column animation a0">
+            <div class="center left">
+                <a href="#">
+                    <button class="og button1">Organizer</button>
+                </a>
+            </div>
+            <div class="org">
+                I want to post webinars.
+            </div>
+        </div>
+        <!--End of button for organizer-->
+
+    </body>
+</html>

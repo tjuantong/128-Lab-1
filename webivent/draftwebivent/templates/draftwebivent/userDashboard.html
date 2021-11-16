@@ -1,0 +1,789 @@
+<!--to load static files such as css and js files in the html-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User dashboard</title>
+        <link rel="stylesheet" href="{% static 'draftwebivent/userDashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+    </head>
+
+    <body>
+        <!--navbar-->
+        <ul>
+            <li><a class="active" href="#">Webivent</a></li>
+            <div>
+                <li class="font"><a href="{% url 'myProfile' %}">My Profile</a></li>
+                <li class="font"><a href="#">Categories</a></li>
+                <div class="rightnav">
+                    <img class="c" src="{% static 'draftwebivent/logoutwhite.svg' %}">
+                    <li class="font"><a class="logout" href="{% url 'logout' %}">Log out</a></li>
+                </div>
+            </div>
+        </ul>
+        <!--end of navbar-->
+
+        <!--For the search bar, search button and filter button-->
+        <div class="box animation a0">
+            <input id="inputsearch" type="search" placeholder="Search Webinars/Tags/Categories">
+            <button id="search" class="search searchicon">-</button>
+                
+            <div class="dropdown">
+                <button class="search filter filtericon" onclick="myFunction()" >.</button>
+                <div id="myDropdown" class="dropdown-content">
+                <a href="#">Today</a>
+                <a href="#">This Month</a>
+                <a href="#">Popular</a>
+                <a href="#">Featured</a>
+                </div>
+            </div>
+        </div>
+
+        <!--to redirect to the login page after 5 mins of inactivity-->
+        {{ redirect_to_login_immediately }}
+        
+        <!--Sections for dashboard-->
+        <h1 class="title animation a0">For You</h1>
+        
+        <div class="scrollHorizontal card-row animation a0">
+            <!--Card 1-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/business.jpg' %}">
+                
+                <h2>Business 101: How to set up online business</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Business Society</h3>
+                        <h4>06/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Business</li>
+                                <li>Entrepreneurship</li>
+                                <li>Career</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">55</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 1-->
+    
+            <!--Card 2-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/programming.jpg' %}">
+                
+                <h2>Programming Basics: How to code HTML, CSS, JS</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Web Dev Soc</h3>
+                        <h4>06/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Programming</li>
+                                <li>Technology</li>
+                                <li>Web dev</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">70</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 2-->
+
+            <!--Card 3-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/health.jpg' %}">
+                
+                <h2>Healthy Life for a Happier Life: Webinar</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>PH Health Association</h3>
+                        <h4>06/14/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Health</li>
+                                <li>Medicine</li>
+                                <li>Life</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">70</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 3-->
+
+            <!--Card 4-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/design.png' %}">
+                
+                <h2>Design Thinking: What is the Process?</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Design Community</h3>
+                        <h4>05/31/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Design</li>
+                                <li>Art</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">50</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 4-->
+
+            <!--Card 5-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/leadership.jpg' %}">
+                
+                <h2>Youth Leadership: What does it take to be one?</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Youth Advocates PH</h3>
+                        <h4>07/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Youth</li>
+                                <li>Leadership</li>
+                                <li>Advocacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">45</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 5-->
+
+        </div>
+
+        <!--HAPPENING TODAY SECTION-->
+        <h1 class="title animation a0">Happening Today</h1>
+        
+        <div class="scrollHorizontal card-row animation a0">
+            <!--Card 1-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/business.jpg' %}">
+                
+                <h2>Business 101: How to set up online business</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Business Society</h3>
+                        <h4>06/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Business</li>
+                                <li>Entrepreneurship</li>
+                                <li>Career</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">55</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 1-->
+    
+            <!--Card 2-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/programming.jpg' %}">
+                
+                <h2>Programming Basics: How to code HTML, CSS, JS</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Web Dev Soc</h3>
+                        <h4>06/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Programming</li>
+                                <li>Technology</li>
+                                <li>Web dev</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">70</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 2-->
+
+            <!--Card 3-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/health.jpg' %}">
+                
+                <h2>Healthy Life for a Happier Life: Webinar</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>PH Health Association</h3>
+                        <h4>06/14/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Health</li>
+                                <li>Medicine</li>
+                                <li>Life</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">70</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 3-->
+
+            <!--Card 4-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/design.png' %}">
+                
+                <h2>Design Thinking: What is the Process?</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Design Community</h3>
+                        <h4>05/31/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Design</li>
+                                <li>Art</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">50</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 4-->
+
+            <!--Card 5-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/leadership.jpg' %}">
+                
+                <h2>Youth Leadership: What does it take to be one?</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Youth Advocates PH</h3>
+                        <h4>07/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Youth</li>
+                                <li>Leadership</li>
+                                <li>Advocacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">45</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 5-->
+
+        </div>
+        <!--END OF HAPPENING TODAY SECTION-->
+
+        <!--FEATURED WEBINARS SECTION-->
+        <h1 class="title animation a0">Featured Webinars</h1>
+        
+        <div class="scrollHorizontal card-row animation a0">
+            <!--Card 1-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/business.jpg' %}">
+                
+                <h2>Business 101: How to set up online business</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Business Society</h3>
+                        <h4>06/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Business</li>
+                                <li>Entrepreneurship</li>
+                                <li>Career</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">55</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 1-->
+    
+            <!--Card 2-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/programming.jpg' %}">
+                
+                <h2>Programming Basics: How to code HTML, CSS, JS</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Web Dev Soc</h3>
+                        <h4>06/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Programming</li>
+                                <li>Technology</li>
+                                <li>Web dev</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">70</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 2-->
+
+            <!--Card 3-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/health.jpg' %}">
+                
+                <h2>Healthy Life for a Happier Life: Webinar</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>PH Health Association</h3>
+                        <h4>06/14/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Health</li>
+                                <li>Medicine</li>
+                                <li>Life</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">70</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 3-->
+
+            <!--Card 4-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/design.png' %}">
+                
+                <h2>Design Thinking: What is the Process?</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Design Community</h3>
+                        <h4>05/31/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Design</li>
+                                <li>Art</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">50</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 4-->
+
+            <!--Card 5-->
+            <div class="card-container">
+                <img src="{% static 'draftwebivent/leadership.jpg' %}">
+                
+                <h2>Youth Leadership: What does it take to be one?</h2>
+    
+                <!--Contains title, Organization, Date, and Fav button-->
+                <div class="row">
+                  
+                    <!--divide the text and button-->
+                    <div class="col">
+                        <h3>Youth Advocates PH</h3>
+                        <h4>07/02/21</h4>  
+                    </div>
+    
+                    <div class="col1">
+                        <button class="fav">
+                            <div class="favicon"></div>
+                        </button>
+                    </div>
+    
+                </div>
+                
+                <!--Contains Tags and Registrants-->
+                <div class="row">
+    
+                    <div class="col">   
+                        <!--Tags for webinar-->
+                        <div class="tags">
+                            <ul>
+                                <li>Youth</li>
+                                <li>Leadership</li>
+                                <li>Advocacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col1">
+                        <!--Registrants-->
+                        <img class="icon" src="{% static 'draftwebivent/people.jpg' %}">
+                        <h3 class="registrants">45</h3>
+                    </div>
+    
+                </div>
+                
+            </div>
+            <!--End of Card 5-->
+
+        </div>
+        <!--END OF FEATURED WEBINARS SECTION-->
+
+        <!--for the dropdown function js-->
+        <script src="{% static 'draftwebivent/userdashboard.js' %}"></script>
+        
+
+    </body>
+</html>

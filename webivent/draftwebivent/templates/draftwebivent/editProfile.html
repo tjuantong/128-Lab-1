@@ -1,0 +1,148 @@
+<!--to load static files such as css and js files in the html-->
+{% load static %}
+{% load class %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Profile</title>
+        <link rel="stylesheet" href="{% static 'draftwebivent/editProfile.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+    </head>
+
+    <body>
+        <!--navbar-->
+        <ul>
+            <li><a class="active" href="{% url 'dashboard' %}">Webivent</a></li>
+            <li class="font"><a href="{% url 'myProfile' %}">My Profile</a></li>
+            <li class="font"><a href="#">Categories</a></li>
+            <div class="rightnav">
+                <img class="c" src="{% static 'draftwebivent/logoutwhite.svg' %}">
+                <li class="font"><a class="logout" href="{% url 'logout' %}">Log out</a></li>
+            </div>
+        </ul>
+        <!--end of navbar-->
+
+        <!--to redirect to the login page after 5 mins of inactivity-->
+        {{ redirect_to_login_immediately }}
+        
+        <!--contain the input fields of edit profile-->
+        <div class="container animation a0">
+
+            <!--to center the form-->
+            <div class="box">
+                <div>
+                    <h1>Edit Profile</h1>
+                </div>
+                <div>
+                    {% for message in messages %}
+                    <h3>{{message}}</h3>
+                    {% endfor %}
+                </div>
+                <!--For the input fields in the first row of the container-->
+                <div class=row>
+
+                    <form id="profile" method="POST" action="/editProfile/">
+                        {% csrf_token %}
+                        
+                        <!--Column 1-->
+                        <div class="col">
+                            
+                            <!--First Column of Column 1-->
+                            <div class="col">
+                                
+                                <div class="field">
+                                    <div class="label">First Name</div>
+                                    {{form.first_name|addcss:"form-control"}}
+                                </div>
+                                
+                                <div class="field">
+                                    <div class="label">Age</div>
+                                    {{profile_form.age|addcss:"form-control"}}
+                                </div>
+
+                                <div class="field">
+                                    <div class="label">Province</div>
+                                    {{profile_form.province|addcss:"form-control"}}
+                                </div>
+
+                                <div class="field">
+                                    <div class="label">Occupation</div>
+                                    {{profile_form.occupation|addcss:"form-control"}}
+                                </div>
+                            </div>
+                            <!--End of First Column of Column 1-->
+                            
+                            <!--Second Column of Column 2-->
+                            <div class="col">
+                                <div class="field">
+                                    <div class="label">Last Name</div>
+                                    {{form.last_name|addcss:"form-control"}}
+                                </div>
+
+                                <div class="field">
+                                    <div class="label">City</div>
+                                    {{profile_form.city|addcss:"form-control"}}
+                                </div>
+
+                                <div class="field">
+                                    <div class="label">Country</div>
+                                    {{profile_form.country|addcss:"form-control"}}
+                                </div>
+                            </div>
+                            <!--End of Second Column of Column 2-->
+
+                        </div>
+                        <!--End of Column 1-->
+                        
+
+                        <!--Column 2-->
+                        <div class="col">
+                            <div class="field">
+                                <div class="label">School / Univerity</div>
+                                {{profile_form.school|addcss:"form-control"}}
+                            </div>
+
+                            <div class="field">
+                                <div class="label">Course and Year Level</div>
+                                {{profile_form.course_yr_lvl|addcss:"form-control"}}
+                            </div>
+
+                            <div class="field h">
+                                <div class="label">Interests</div>
+                            </div>
+                            
+                            {% for i in profile_form.interest%}
+                                {{ i }}
+                            {% endfor %}
+                            
+                            
+                        </div>
+                        <!--End of Column 2-->
+                    
+                    
+                        </div>
+                        <!--End of input fields-->
+
+                        <!--for buttons in row 2-->
+                        <div class="row center">
+                            
+                            <!--Redirect to the my profile-->
+                            <a href="{% url 'myProfile' %}">
+                                <button type="button" class="back">Back</button>
+                            </a>    
+
+                            <button type="submit" >Save Changes</button>
+
+                        </div>
+                        <!--end of buttons in row 2-->
+                </form>
+            </div>
+            <!--End of form-->
+            
+        </div>
+        <!--End of container-->
+        
+    </body>
+</html>

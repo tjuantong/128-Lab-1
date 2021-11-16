@@ -1,0 +1,41 @@
+<!--to load static files such as css and js files in the html-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'draftwebivent/logout.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/animation.css' %}">
+        <link rel="stylesheet" href="{% static 'draftwebivent/navbar.css' %}">
+    </head>
+    
+    <body>
+        {% block body %}
+        <!--navbar-->
+        <ul>
+            <li><a class="active" href="{% url 'home' %}">Webivent</a></li>
+            <div class="rightnav">
+                <li class="font"><a href="#">Features</a></li>
+                <li class="font"><a href="#">About</a></li>
+            </div>
+        </ul>
+
+        <div class="animation loginAnimation a2">
+            <img src="{% static 'draftwebivent/logout.png' %}">
+            <div class="header">
+                {% for message in messages %}
+                    {% if 'success' in message.tags %}
+                        <!--show logout prompt-->
+                        <h3 class="a1">{{message}}</h3>
+                        <h4>Return to the home page <a href="{% url 'home' %}">here</a>.</h4>
+                    {% else %}
+                        <!--show session timeout prompt-->
+                        <h3 class="a1">You have been logged out.</h3>
+                        <h4>{{message}} Log in again <a href="{% url 'login' %}">here</a>.</h4>
+                    {% endif %}    
+                {% endfor %}        
+            </div>
+                
+        </div>
+        {% endblock %}
+        
+</html>
